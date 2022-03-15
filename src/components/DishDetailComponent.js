@@ -50,6 +50,8 @@ const DishDetail = (props) => {
       }
     }
 
+    export default DishDetail;
+
 // ------- Class Component --------------------------------------
 // class DishDetail extends Component {
 //   constructor(props) {
@@ -115,5 +117,3 @@ const DishDetail = (props) => {
 //     }
 //   }
 // }
-
-export default DishDetail;

@@ -30,6 +30,9 @@ import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
       );
   }
   
+
+  export default Menu;
+  
 // --------- Class Component ---------------------------
 // class Menu extends Component {
 //   constructor(props) {
@@ -58,4 +61,3 @@ import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
 //   }
 // }
 
-export default Menu;
