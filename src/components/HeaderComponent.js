@@ -1,20 +1,19 @@
 import React, { Component } from "react";
 import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Label,
-        Button, Modal, ModalHeader, ModalBody, FormGroup, Form, Input } from 'reactstrap';
+        Button, Modal, ModalHeader, ModalBody, FormGroup, Form, Input, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
     constructor(props) {
         super(props);
 
-        this.toggleNav = this.toggleNav.bind(this);
         this.state = {
             isNavOpen: false,
             isModalOpen: false
         };
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
-        this.handleLogin = this.handleLogin.bind(this);
+        this.handleReservation = this.handleReservation.bind(this);
     }
 
     toggleNav() {
@@ -29,10 +28,10 @@ class Header extends Component {
         });
     }
 
-    handleLogin(event) {
+    handleReservation(event) {
         this.toggleModal();
-        alert("Username: " + this.username.value + "Password: " + this.password.value + 
-        " Remember: " + this.remember.checked);
+        alert("Name: " + this.name.value + "Date: " + this.date.value + 
+        " Time: " + this.time.value + "Party Size: " + this.partysize.value);
         event.preventDefault();
     }
 
@@ -42,9 +41,9 @@ class Header extends Component {
                 <Navbar dark expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand className="mr-auto" href="/">
+                        {/* <NavbarBrand className="mr-auto" href="/">
                             <img src="assets/images/logo.png" height="30" width="41" alt="Ristorante Con Fusion" />
-                        </NavbarBrand>
+                        </NavbarBrand> */}
 
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
@@ -71,8 +70,8 @@ class Header extends Component {
                                 </Nav>
                                 <Nav className="ml-auto" navbar>
                                     <NavItem>
-                                        <Button outline onClick={this.toggleModal}>
-                                            <span className="fa fa-sign-in fa-lg"></span>Login
+                                        <Button outline color="light" onClick={this.toggleModal}>
+                                            <span className="fa fa-pencil-square-o fa-lg"></span> Make Reservation
                                         </Button>
                                     </NavItem>
                                 </Nav>
@@ -89,31 +88,69 @@ class Header extends Component {
                                     and create a unique fusion experience. Our lipsmacking creations 
                                     will tickle your culinary senses!</p>
                             </div>
+
+                            <div className="col-12 col-sm-3 ml-auto">
+                                <img src="assets/images/logo.png" size="100%" />
+                            </div>
+
                         </div>
                     </div>
                 </div>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
+                    <ModalHeader toggle={this.toggleModal}>Make a Reservation</ModalHeader>
                     <ModalBody>
-                        <Form onSubmit={this.handleLogin}>
+                        <Form onSubmit={this.handleReservation}>
                             <FormGroup>
-                                <Label htmlFor="username">Username</Label>
-                                <Input type="text" id="username" name="username"
-                                innerRef={(input) => this.username = input} />
+                            <Col md={{size: 8}}>
+                                <Label htmlFor="name">Name</Label>
+                                <Input type="text" id="name" name="name"
+                                innerRef={(input) => this.name = input} />
+                            </Col>
                             </FormGroup>
                             <FormGroup>
-                                <Label htmlFor="password">Password</Label>
-                                <Input type="password" id="password" name="password"
-                                innerRef={(input) => this.password = input} />
+                            <Col md={{size: 6}}>
+                                <Label htmlFor="date">Date</Label>
+                                <Input type="date" id="date" name="date"
+                                innerRef={(input) => this.date = input} />
+                            </Col>
                             </FormGroup>
-                            <FormGroup check>
-                                <Label check>
-                                    <Input type="checkbox" name="remember"
-                                    innerRef={(input) => this.remember = input} />
-                                    Remember me
-                                </Label>
+                            <FormGroup>
+                            <Col md={{size: 6}}>
+                                <Label htmlFor="time">Time</Label>
+                                <Input type="time" id="time" name="time"
+                                innerRef={(input) => this.time = input} />
+                            </Col>
                             </FormGroup>
-                            <Button type="submit" value="submit" color="primary">Login</Button>
+                            
+                            <FormGroup row>
+                                <Col>
+                                    <FormGroup>
+                                    <Col md={{size: 6}}>
+                                        <Label htmlFor="partysize">Number of People</Label>
+                                    </Col>
+                                    <Col md={{size: 1}}>
+                                            <Input type="select" id="partysize" name="partysize" 
+                                            innerRef={(input) => this.partysize = input}>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8+</option>
+                                            </Input>
+                                    </Col>
+                                    </FormGroup>
+                                </Col>
+                            </FormGroup>
+
+                            <FormGroup row>
+                                <Col md={{size: 3, offset: 4}}>
+                                    <Button type="submit" value="submit" color="primary">Submit</Button>
+                                </Col>
+                            </FormGroup>
+                            
                         </Form>
                     </ModalBody>
                 </Modal>

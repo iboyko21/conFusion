@@ -24,7 +24,6 @@
 }
 
 address{
-    font-size:80%;
     margin:0px;
     color:#0f0f0f;
 }
@@ -32,3 +31,8 @@ address{
 .navbar-dark {
     background-color: #512DA8;
 }
+
+.copyright {
+    margin-top: 20px;
+}
+
