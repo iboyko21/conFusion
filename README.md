@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Ristorante Con Fusion
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
