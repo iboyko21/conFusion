@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 // ------------ Functional Component --------------------------------
-  function RenderMenuItem({dish,onClick}) {
+  function RenderMenuItem({dish}) {
       return(
         <Card>
             <Link to={`/menu/${dish.id}`} >
