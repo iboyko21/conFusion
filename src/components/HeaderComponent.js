@@ -39,15 +39,16 @@ class Header extends Component {
         return(
             <React.Fragment>
                 <Navbar dark expand="md">
-                    <div className="container">
+                    <div className="container-fluid">
                         <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand href="#">
+                        <a href="#" className="navbar-brand">Ristorante <span className="text-warning">Con Fusion</span></a>
+                        {/* <NavbarBrand href="#">
                             <p>Ristorante Con Fusion</p>
-                            {/* <img src="assets/images/logo.png" height="30" width="41" alt="Ristorante Con Fusion" /> */}
-                        </NavbarBrand>
+                             <img src="assets/images/logo.png" height="30" width="41" alt="Ristorante Con Fusion" />
+                        </NavbarBrand> */}
 
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar>
+                            <Nav navbar className="ml-auto">
                                 <NavItem>
                                     <NavLink className="nav-link" to="/home">
                                         <span className="fa fa-home fa-lg"></span> Home
@@ -80,23 +81,11 @@ class Header extends Component {
                      </div>
                 </Navbar>
 
-                <div className="jumbotron">
-                    <div className="container">
-                        <div className="row row-header">
-                            <div className="col-12 col-sm-6">
-                                <h1>Ristorante Con Fusion</h1>
-                                <p>We take inspiration from the World's best cuisines, 
-                                    and create a unique fusion experience. Our lipsmacking creations 
-                                    will tickle your culinary senses!</p>
-                            </div>
 
-                            <div className="col-12 col-sm-3 ml-auto">
-                                <img src="assets/images/logo.png" size="100%" />
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
+                
+               
+                
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Make a Reservation</ModalHeader>
                     <ModalBody>

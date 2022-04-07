@@ -11,10 +11,11 @@ import { Link } from "react-router-dom";
 
 function RenderLeader({ leader }) {
   return (
-    <div key={leader.id} className="col-12 mt-4">
+    <div className="row">
+      <div key={leader.id} className="col-12 mt-4">
                 <Media tag="li">
-                    <Media left middle>
-                        <Media object src={leader.image} alt={leader.name}/>
+                    <Media>
+                        <Media object src={leader.image} alt={leader.name} className="img-fluid chef-img" />
                     </Media>
                     <Media body className="ml-5">
                         <Media heading>{leader.name}</Media>
@@ -23,6 +24,8 @@ function RenderLeader({ leader }) {
                     </Media>
                 </Media>
             </div>
+            </div>
+    
   );
 }
 
@@ -108,7 +111,7 @@ function About(props) {
       </div>
       <div className="row row-content">
         <div className="col-12">
-          <h2>Corporate Leadership</h2>
+          <h2>Our Leadership</h2>
         </div>
         <div className="col-12">{leaders}</div>
       </div>
