@@ -21,7 +21,7 @@ function Home(props) {
         <div>
 
             <div className="jumbotron">
-                    <div className="container-fluid">
+                    <div className="container">
                         <div className="row align-items-center mt-5">
                             <div className="col-12 col-sm-6">
                                 <h1>Ristorante Con Fusion</h1>

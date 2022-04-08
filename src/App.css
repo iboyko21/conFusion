@@ -21,7 +21,7 @@
     background-image: url(/public/assets/images/slider-3.jpg);
     opacity: 90%;
     background-size: cover;
-    height: 30rem;
+    height: 40rem;
     border-radius: 0%;
     color:floralwhite;
     text-shadow: -1px -1px 0 #000,
@@ -36,12 +36,6 @@
 .main-card {
     height: 100%;
 }
-.container-jumbotron {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
-    margin-left: 6rem;
-}
-
 
 .menu-title {
     color: white;
