@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
       return(
         <Card>
             <Link to={`/menu/${dish.id}`} >
-                <CardImg width="100%" src={dish.image} alt={dish.name} />
+                <CardImg width="100%" src={dish.image} alt={dish.name} className="menu-img"/>
                 <CardImgOverlay>
-                    <h5>{dish.name}</h5>
+                    <h5 className="menu-title">{dish.name}</h5>
                 </CardImgOverlay>
             </Link>
       </Card>
